@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Vibe</title>
     <style>
-
+    
         * {
             margin: 0;
             padding: 0;
@@ -17,6 +17,7 @@
             background-color: #f4f9f4;
             color: #2c3e50;
             line-height: 1.6;
+            overflow-x: hidden; 
         }
 
         
@@ -26,14 +27,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 15px 50px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        
         .logo {
             text-decoration: none;
             display: flex;
@@ -41,15 +41,15 @@
         }
 
         .logo-image {
-            height: 55px; 
-            width: 55px;
+            height: 50px; 
+            width: 50px;
             margin-right: 15px; 
             object-fit: contain;
         }
 
         .logo-text {
             color: #ffffff;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: bold;
             letter-spacing: 1px;
             display: flex;
@@ -58,7 +58,7 @@
 
         .logo-text .energy {
             color: #52b788; 
-            font-size: 20px;
+            font-size: 18px;
             margin-top: -5px; 
         }
 
@@ -81,10 +81,28 @@
         }
 
     
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1001;
+        }
+
+        .hamburger .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        
         .hero-section {
             position: relative;
             width: 100%;
             height: 85vh; 
+            min-height: 500px;
             background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
@@ -94,7 +112,6 @@
             text-align: center;
         }
 
-    
         .hero-section::before {
             content: '';
             position: absolute;
@@ -115,25 +132,23 @@
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 3rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
         }
 
         .hero-content p {
-            font-size: 20px;
+            font-size: 1.2rem;
             line-height: 1.8;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
 
-    
         .container {
             width: 100%;
             height: 40vh; 
             background-color: #f4f9f4; 
         }
 
-    
         footer {
             text-align: center;
             padding: 20px;
@@ -142,28 +157,85 @@
             font-size: 14px;
         }
 
-    
+        
+
+
+        @media (max-width: 1024px) {
+            header {
+                padding: 15px 30px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            nav ul {
+                gap: 20px;
+            }
+        }
+
+        
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                gap: 15px;
                 padding: 15px 20px;
             }
 
-            nav ul {
-                gap: 15px;
+            
+            .hamburger {
+                display: flex;
             }
+
+            
+            nav ul {
+                position: absolute;
+                top: 80px; 
+                left: -100%; 
+                flex-direction: column;
+                background-color: #1b4332;
+                width: 100%;
+                text-align: center;
+                transition: 0.4s all ease;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+                padding: 20px 0;
+                gap: 25px;
+            }
+
+            
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                display: block;
+            }
+
+            
+            .hamburger.toggle .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .hamburger.toggle .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggle .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
             
             .hero-section {
                 height: 70vh; 
+                min-height: 400px;
             }
 
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 2rem;
+                margin-bottom: 15px;
             }
 
             .hero-content p {
-                font-size: 16px;
+                font-size: 1rem;
+                line-height: 1.6;
             }
             
             .container {
@@ -175,17 +247,25 @@
 <body>
 
     <header>
-    
+        
         <a href="#" class="logo">
             <img class="logo-image" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%2352b788' stroke-width='4'/%3E%3Cpath d='M32 8 C 44 8, 52 18, 52 32 C 52 46, 44 56, 32 56 C 20 56, 12 46, 12 32 C 12 18, 20 8, 32 8 Z' fill='%2352b788' opacity='0.3'/%3E%3Cpath d='M32 32 L 32 12 C 40 12, 46 18, 46 26 Z' fill='%2352b788'/%3E%3Cpath d='M32 32 L 52 32 C 52 40, 46 46, 38 46 Z' fill='%23ffffff'/%3E%3Cpath d='M32 32 L 32 52 C 24 52, 18 46, 18 38 Z' fill='%2352b788'/%3E%3Cpath d='M32 32 L 12 32 C 12 24, 18 18, 26 18 Z' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%231b4332'/%3E%3C/svg%3E" alt="Sustainable Energy Logo">
-            
             <div class="logo-text">
                 <span>ECO</span>
                 <span class="energy">VIBE</span>
             </div>
         </a>
+
+        
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        
         <nav>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Solar Energy</a></li>
                 <li><a href="#">Wind Power</a></li>
@@ -193,7 +273,6 @@
             </ul>
         </nav>
     </header>
-
     
     <div class="hero-section">
         <div class="hero-content">
@@ -205,12 +284,26 @@
     </div>
 
     <div class="container">
-    
+        
     </div>
 
     <footer>
         <p>&copy; 2026 Sustainable Energy Project. Built for a Greener Future.</p>
     </footer>
+
+    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+        
+            navLinks.classList.toggle('active');
+            
+            
+            hamburger.classList.toggle('toggle');
+        });
+    </script>
 
 </body>
 </html>
