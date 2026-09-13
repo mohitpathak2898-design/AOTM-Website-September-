@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Vibe</title>
+    <title>Green Horizon</title>
     <style>
     
         * {
@@ -105,7 +105,7 @@
             width: 100%;
             height: 85vh; 
             min-height: 500px;
-            background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80');
+            background-image: url('Images/p1.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -152,7 +152,10 @@
         
         .sustainable-info-section {
             background-color: #ffffff;
-            padding: 70px 20px;
+            padding: 60px 20px; 
+            margin-top: -1px; 
+            position: relative; 
+            z-index: 2;
             text-align: center;
         }
 
@@ -258,7 +261,7 @@
             }
             
             nav {
-                position: absolute; 
+                position: static; 
             }
 
             .hamburger {
@@ -266,27 +269,35 @@
                 margin-left: auto; 
             }
 
+            
             nav ul {
                 position: absolute;
-                top: 80px; 
-                left: -100vw; 
+                top: 100%; 
+                left: 0; 
                 flex-direction: column;
                 background-color: #1b4332;
-                width: 100vw;
+                width: 100%;
                 text-align: center;
-                transition: 0.4s all ease;
+                gap: 0;
+                max-height: 0; 
+                overflow: hidden; 
+                padding: 0; 
+                
+            
+                transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
                 box-shadow: 0 10px 10px rgba(0,0,0,0.2);
-                padding: 20px 0;
-                gap: 25px;
             }
 
             nav ul.active {
-                left: 0;
+                max-height: 350px; 
+                padding: 20px 0;
+                gap: 20px;
             }
 
             nav ul li a {
                 font-size: 18px; 
                 display: inline-block;
+                padding: 5px 0;
             }
 
             .hamburger.toggle .bar:nth-child(1) {
@@ -301,9 +312,25 @@
 
             .container {
                 grid-template-columns: 1fr; 
-                padding: 30px 5% 60px;
+                padding: 30px 5% 50px;
+                gap: 15px; 
             }
             
+            
+            .card {
+                padding: 20px 15px; 
+            }
+
+            .card h3 {
+                font-size: 1.1rem; 
+                margin-bottom: 8px;
+            }
+
+            .card p {
+                font-size: 0.85rem; 
+                line-height: 1.5;
+            }
+
             .hero-content h1 {
                 font-size: 2.2rem;
             }
@@ -332,8 +359,8 @@
         <a href="#" class="logo">
             <img class="logo-image" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%2352b788' stroke-width='4'/%3E%3Cpath d='M32 8 C 44 8, 52 18, 52 32 C 52 46, 44 56, 32 56 C 20 56, 12 46, 12 32 C 12 18, 20 8, 32 8 Z' fill='%2352b788' opacity='0.3'/%3E%3Cpath d='M32 32 L 32 12 C 40 12, 46 18, 46 26 Z' fill='%2352b788'/%3E%3Cpath d='M32 32 L 52 32 C 52 40, 46 46, 38 46 Z' fill='%23ffffff'/%3E%3Cpath d='M32 32 L 32 52 C 24 52, 18 46, 18 38 Z' fill='%2352b788'/%3E%3Cpath d='M32 32 L 12 32 C 12 24, 18 18, 26 18 Z' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%231b4332'/%3E%3C/svg%3E" alt="Sustainable Energy Logo">
             <div class="logo-text">
-                <span>ECO</span>
-                <span class="energy">VIBE</span>
+                <span>GREEN</span>
+                <span class="energy">HORIZON</span>
             </div>
         </a>
 
@@ -404,7 +431,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Eco Vibe Technologies. Built for a Sustainable Future.</p>
+        <p>&copy; 2026 Green Horizon Technologies. Built for a Sustainable Future.</p>
     </footer>
     
     <script>
