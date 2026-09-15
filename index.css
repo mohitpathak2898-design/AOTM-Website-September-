@@ -1,4 +1,8 @@
-* {
+html {
+            scroll-behavior: smooth; 
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -94,6 +98,7 @@
             display: flex;
             align-items: center;
             padding-left: 8%; 
+            margin-bottom: 0; 
         }
 
         .hero-section::before {
@@ -170,10 +175,14 @@
             font-size: 1.2rem;
         }
 
+        
         .sustainable-info-section {
             background-color: #ffffff;
             padding: 60px 20px; 
             text-align: center;
+            margin-top: -3px; 
+            position: relative;
+            z-index: 2;
         }
 
         .sustainable-info-section h2 {
@@ -349,8 +358,8 @@
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             
-            .logo-text { font-size: 15px; gap: 4px; }
-            .logo-text .energy { font-size: 15px; }
+            .logo-text { font-size: 20px; gap: 4px; }
+            .logo-text .energy { font-size: 20px; }
 
             .hamburger { display: flex; }
             
@@ -378,13 +387,12 @@
                 padding: 5px 0; 
             }
             
-            
             .hero-section { 
                 justify-content: center; 
                 padding-left: 0; 
                 text-align: center; 
-                height: 65vh; 
-                min-height: 480px; 
+                height: 75vh; 
+                min-height: 550px; 
             }
             
             .hero-section::before {
@@ -396,7 +404,6 @@
                 padding: 0 20px; 
             }
             
-            
             .hero-content h1 { 
                 font-size: 2.2rem; 
                 text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
@@ -406,7 +413,6 @@
                 margin-bottom: 25px;
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
             }
-            
             
             .sustainable-info-section { 
                 padding: 45px 20px; 
@@ -419,7 +425,6 @@
                 font-size: 1rem; 
             }
             
-            
             .section-title { 
                 padding: 45px 20px 15px; 
             }
@@ -431,7 +436,6 @@
                 font-size: 1rem; 
             }
 
-            
             .container { 
                 grid-template-columns: 1fr; 
                 padding-left: 5%;
@@ -452,7 +456,6 @@
                 font-size: 0.95rem;
             }
 
-            
             .energy-topics-section {
                 padding: 45px 20px 55px;
             }
