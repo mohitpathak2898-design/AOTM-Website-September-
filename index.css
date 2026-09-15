@@ -189,7 +189,6 @@
             margin: 0 auto;
         }
 
-    
         .section-title {
             text-align: center;
             padding: 60px 20px 20px;
@@ -210,7 +209,6 @@
             margin: 0 auto;
         }
 
-        
         .container {
             width: 100%;
             background-color: #ffffff; 
@@ -351,7 +349,6 @@
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             
-            
             .logo-text { font-size: 15px; gap: 4px; }
             .logo-text .energy { font-size: 15px; }
 
@@ -386,8 +383,8 @@
                 justify-content: center; 
                 padding-left: 0; 
                 text-align: center; 
-                height: 45vh; 
-                min-height: 350px; 
+                height: 65vh; 
+                min-height: 480px; 
             }
             
             .hero-section::before {
@@ -401,93 +398,96 @@
             
             
             .hero-content h1 { 
-                font-size: 1.8rem; 
+                font-size: 2.2rem; 
                 text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
             }
             .hero-content p { 
-                font-size: 0.85rem;
-                margin-bottom: 20px;
+                font-size: 1.05rem;
+                margin-bottom: 25px;
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
             }
             
             
             .sustainable-info-section { 
-                padding: 25px 15px; 
+                padding: 45px 20px; 
             }
             .sustainable-info-section h2 { 
-                font-size: 1.4rem; 
-                margin-bottom: 8px; 
+                font-size: 1.8rem; 
+                margin-bottom: 12px; 
             }
             .sustainable-info-section p { 
-                font-size: 0.85rem; 
+                font-size: 1rem; 
             }
             
+            
             .section-title { 
-                padding: 25px 15px 10px; 
+                padding: 45px 20px 15px; 
             }
             .section-title h2 { 
-                font-size: 1.4rem; 
-                margin-bottom: 8px; 
+                font-size: 1.8rem; 
+                margin-bottom: 12px; 
             }
             .section-title p { 
-                font-size: 0.85rem; 
+                font-size: 1rem; 
             }
 
+            
             .container { 
                 grid-template-columns: 1fr; 
                 padding-left: 5%;
                 padding-right: 5%;
-                padding-top: 15px; 
-                padding-bottom: 30px; 
-                gap: 12px;
+                padding-top: 25px; 
+                padding-bottom: 50px; 
+                gap: 20px;
             }
 
             .card {
-                padding: 15px 12px;
+                padding: 25px 20px;
             }
             .card h3 {
-                font-size: 1rem;
-                margin-bottom: 5px;
+                font-size: 1.2rem;
+                margin-bottom: 8px;
             }
             .card p {
-                font-size: 0.8rem;
+                font-size: 0.95rem;
             }
 
+            
             .energy-topics-section {
-                padding: 25px 15px 30px;
+                padding: 45px 20px 55px;
             }
             .energy-topics-header {
-                margin-bottom: 15px;
+                margin-bottom: 25px;
             }
             .energy-topics-header h2 {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
             }
             .energy-topics-header p {
-                font-size: 0.85rem;
+                font-size: 1rem;
             }
             .energy-topics-container {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 20px;
             }
             .energy-topic-card {
-                border-radius: 10px;
+                border-radius: 12px;
             }
             .energy-topic-image {
-                height: 140px;
+                height: 190px;
             }
             .energy-topic-content {
-                padding: 12px 12px 15px;
+                padding: 20px;
             }
             .energy-topic-content h3 {
-                font-size: 1.05rem;
-                margin-bottom: 5px;
+                font-size: 1.25rem;
+                margin-bottom: 8px;
             }
             .energy-topic-content p {
-                font-size: 0.8rem;
+                font-size: 0.95rem;
             }
             .energy-topic-label {
-                padding: 3px 8px;
-                font-size: 0.65rem;
-                margin-bottom: 8px;
+                padding: 4px 10px;
+                font-size: 0.75rem;
+                margin-bottom: 10px;
             }
         }
