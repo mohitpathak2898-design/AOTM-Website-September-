@@ -40,24 +40,20 @@
             align-items: center;
         }
 
-        .logo-image {
-            height: 40px;
-            width: 40px;
-            margin-right: 12px; 
-        }
-
+        
         .logo-text {
             color: #1b4332; 
-            font-size: 20px; 
+            font-size: 24px; 
             font-weight: bold;
             display: flex;
-            flex-direction: column;
+            flex-direction: row; 
+            gap: 6px; 
+            align-items: center;
         }
 
         .logo-text .energy {
             color: #52b788; 
-            font-size: 15px; 
-            margin-top: -3px; 
+            font-size: 24px; 
         }
 
         nav {
@@ -97,7 +93,6 @@
             border-radius: 5px;
         }
         
-        
         .hero-section {
             position: relative;
             width: 100%;
@@ -111,6 +106,7 @@
             padding-left: 8%; 
         }
 
+        
         .hero-section::before {
             content: '';
             position: absolute;
@@ -118,7 +114,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%); 
+            background: linear-gradient(to right, rgba(27, 67, 50, 0.9) 0%, rgba(82, 183, 136, 0.3) 100%); 
             z-index: 1;
         }
 
@@ -185,7 +181,6 @@
             font-size: 1.2rem;
         }
 
-    
         .sustainable-info-section {
             background-color: #ffffff;
             padding: 60px 20px; 
@@ -268,16 +263,161 @@
             border-top: 1px solid #eaeaea;
         }
         
-        @media (max-width: 1024px) {
-            header { padding: 15px 30px; }
-            .container { grid-template-columns: repeat(2, 1fr); }
-            .hero-content h1 { font-size: 3.5rem; } 
+
+        .energy-topics-section {
+            background: #f4f9f4;
+            padding: 65px 20px 75px;
         }
 
+        .energy-topics-header {
+            max-width: 850px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .energy-topics-header h2 {
+            color: #1b4332;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .energy-topics-header p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .energy-topics-container {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .energy-topic-card {
+            background: #fff;
+            border: 1px solid #e5ebe6;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(27, 67, 50, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .energy-topic-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(27, 67, 50, 0.13);
+        }
+
+        .energy-topic-image {
+            width: 100%;
+            height: 210px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .energy-topic-content {
+            padding: 23px 22px 25px;
+        }
+
+        .energy-topic-content h3 {
+            color: #1b4332;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .energy-topic-content p {
+            color: #555;
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        .energy-topic-label {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 5px 11px;
+            border-radius: 30px;
+            background: #eaf6ee;
+            color: #2d6a4f;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            .energy-topics-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .energy-topic-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .energy-topics-section {
+                padding: 45px 15px 55px;
+            }
+
+            .energy-topics-header {
+                margin-bottom: 28px;
+            }
+
+            .energy-topics-header h2 {
+                font-size: 1.9rem;
+            }
+
+            .energy-topics-header p {
+                font-size: 0.94rem;
+            }
+
+            .energy-topics-container {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .energy-topic-card {
+                border-radius: 14px;
+            }
+
+            .energy-topic-image {
+                height: 190px;
+            }
+
+            .energy-topic-content {
+                padding: 20px 18px 22px;
+            }
+
+            .energy-topic-content h3 {
+                font-size: 1.22rem;
+            }
+
+            .energy-topic-content p {
+                font-size: 0.93rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            header { 
+                padding: 15px 30px; 
+            }
+            .container { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            .hero-content h1 { 
+                font-size: 3.5rem; 
+            } 
+        }
         
         @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            .hamburger { display: flex; }
+            header { 
+                padding: 15px 20px; 
+            }
+            .hamburger { 
+                display: flex; 
+            }
             
             nav ul {
                 position: absolute; 
@@ -316,12 +456,14 @@
             
             
             .hero-section::before {
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+                background: linear-gradient(to bottom, rgba(27, 67, 50, 0.6) 0%, rgba(27, 67, 50, 0.8) 100%);
             }
 
-            .hero-content { align-items: center; padding: 0 20px; }
+            .hero-content { 
+                align-items: center; 
+                padding: 0 20px; 
+            }
             
-        
             .hero-content h1 { 
                 font-size: 2.2rem; 
                 text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
@@ -330,15 +472,28 @@
                 font-size: 1rem;
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
             }
-
             
-            .sustainable-info-section { padding: 40px 15px; }
-            .sustainable-info-section h2 { font-size: 1.8rem; margin-bottom: 12px; }
-            .sustainable-info-section p { font-size: 0.95rem; }
+            .sustainable-info-section { 
+                padding: 40px 15px; 
+            }
+            .sustainable-info-section h2 { 
+                font-size: 1.8rem; 
+                margin-bottom: 12px; 
+            }
+            .sustainable-info-section p { 
+                font-size: 0.95rem; 
+            }
             
-            .section-title { padding: 40px 15px 15px; }
-            .section-title h2 { font-size: 1.8rem; margin-bottom: 12px; }
-            .section-title p { font-size: 0.95rem; }
+            .section-title { 
+                padding: 40px 15px 15px; 
+            }
+            .section-title h2 { 
+                font-size: 1.8rem; 
+                margin-bottom: 12px; 
+            }
+            .section-title p { 
+                font-size: 0.95rem; 
+            }
         }
     </style>
 </head>
@@ -346,7 +501,6 @@
 
     <header>
         <a href="#" class="logo">
-            <img class="logo-image" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%2352b788' stroke-width='4'/%3E%3Cpath d='M32 8 C 44 8, 52 18, 52 32 C 52 46, 44 56, 32 56 C 20 56, 12 46, 12 32 C 12 18, 20 8, 32 8 Z' fill='%2352b788' opacity='0.3'/%3E%3Cpath d='M32 32 L 32 12 C 40 12, 46 18, 46 26 Z' fill='%2352b788'/%3E%3Cpath d='M32 32 L 52 32 C 52 40, 46 46, 38 46 Z' fill='%23ffffff'/%3E%3Cpath d='M32 32 L 32 52 C 24 52, 18 46, 18 38 Z' fill='%2352b788'/%3E%3Cpath d='M32 32 L 12 32 C 12 24, 18 18, 26 18 Z' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%231b4332'/%3E%3C/svg%3E" alt="Sustainable Energy Logo">
             <div class="logo-text">
                 <span>GREEN</span>
                 <span class="energy">HORIZON</span>
@@ -388,6 +542,118 @@
             Sustainable energy is power that can be replenished naturally without exhausting natural resources or causing severe environmental damage. It encompasses renewable sources like sunlight, wind, rain, and geothermal heat. By making the switch to these green technologies, we can drastically reduce our carbon footprint, combat global climate change, and ensure a cleaner, healthier planet for generations to come. It’s not just about producing energy; it’s about doing so responsibly.
         </p>
     </div>
+
+
+    <section class="energy-topics-section">
+        <div class="energy-topics-header">
+            <h2>Explore Sustainable Energy</h2>
+            <p>
+                Discover the technologies and everyday practices shaping a cleaner, more resilient future.
+                From renewable power generation to greener lifestyles, each solution can help reduce emissions
+                and use natural resources more responsibly.
+            </p>
+        </div>
+
+        <div class="energy-topics-container">
+
+            <article class="energy-topic-card">
+                <img class="energy-topic-image"
+                     src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=85"
+                     alt="Solar panels generating renewable energy"
+                     loading="lazy">
+                <div class="energy-topic-content">
+                    <span class="energy-topic-label">Renewable Power</span>
+                    <h3>Solar Energy</h3>
+                    <p>
+                        Solar panels convert sunlight into electricity without burning fossil fuels.
+                        Solar power can be used for homes, businesses and large-scale power plants,
+                        helping lower operational emissions and dependence on conventional energy.
+                    </p>
+                </div>
+            </article>
+
+            <article class="energy-topic-card">
+                <img class="energy-topic-image"
+                     src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=85"
+                     alt="Wind turbines producing clean energy"
+                     loading="lazy">
+                <div class="energy-topic-content">
+                    <span class="energy-topic-label">Clean Electricity</span>
+                    <h3>Wind Power</h3>
+                    <p>
+                        Wind turbines use the movement of air to generate electricity. Modern wind farms
+                        can produce large amounts of low-carbon power and work alongside solar generation
+                        to create a more diverse renewable energy mix.
+                    </p>
+                </div>
+            </article>
+
+            <article class="energy-topic-card">
+                <img class="energy-topic-image"
+                     src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=85"
+                     alt="Green lifestyle with plants and sustainable living"
+                     loading="lazy">
+                <div class="energy-topic-content">
+                    <span class="energy-topic-label">Everyday Action</span>
+                    <h3>Green Lifestyle</h3>
+                    <p>
+                        Sustainable living starts with practical choices such as saving electricity,
+                        reducing waste, reusing materials, choosing efficient appliances and using
+                        public transport, cycling or walking when possible.
+                    </p>
+                </div>
+            </article>
+
+            <article class="energy-topic-card">
+                <img class="energy-topic-image"
+                     src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=1000&q=85"
+                     alt="Battery energy storage technology"
+                     loading="lazy">
+                <div class="energy-topic-content">
+                    <span class="energy-topic-label">Energy Storage</span>
+                    <h3>Battery Storage</h3>
+                    <p>
+                        Energy storage systems save electricity when renewable generation is high and
+                        release it when demand increases. Storage improves grid flexibility and helps
+                        renewable energy support a more reliable electricity supply.
+                    </p>
+                </div>
+            </article>
+
+            <article class="energy-topic-card">
+                <img class="energy-topic-image"
+                     src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=85"
+                     alt="Electric vehicle charging for clean transportation"
+                     loading="lazy">
+                <div class="energy-topic-content">
+                    <span class="energy-topic-label">Clean Mobility</span>
+                    <h3>Electric Mobility</h3>
+                    <p>
+                        Electric vehicles use electric motors instead of conventional internal-combustion
+                        engines. When charged with low-carbon electricity, they can help reduce transport
+                        emissions and support the transition toward cleaner mobility.
+                    </p>
+                </div>
+            </article>
+
+            <article class="energy-topic-card">
+                <img class="energy-topic-image"
+                     src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=85"
+                     alt="Modern power infrastructure and smart energy systems"
+                     loading="lazy">
+                <div class="energy-topic-content">
+                    <span class="energy-topic-label">Future Grid</span>
+                    <h3>Smart Energy</h3>
+                    <p>
+                        Smart energy systems combine digital monitoring, efficient infrastructure and
+                        responsive electricity management. They can help balance supply and demand while
+                        making renewable power easier to integrate into modern grids.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
 
     <div class="section-title">
         <h2>Advancing the Energy Transition</h2>
