@@ -97,7 +97,7 @@
             border-radius: 5px;
         }
         
-    
+        
         .hero-section {
             position: relative;
             width: 100%;
@@ -111,7 +111,6 @@
             padding-left: 8%; 
         }
 
-        
         .hero-section::before {
             content: '';
             position: absolute;
@@ -141,7 +140,7 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 25px;
-            background-color: rgba(0, 0, 0, 0.3); 
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
         .hero-content h1 {
@@ -275,6 +274,7 @@
             .hero-content h1 { font-size: 3.5rem; } 
         }
 
+        
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             .hamburger { display: flex; }
@@ -316,11 +316,29 @@
             
             
             .hero-section::before {
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%);
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
             }
 
             .hero-content { align-items: center; padding: 0 20px; }
-            .hero-content h1 { font-size: 2.5rem; }
+            
+        
+            .hero-content h1 { 
+                font-size: 2.2rem; 
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
+            }
+            .hero-content p { 
+                font-size: 1rem;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+            }
+
+            
+            .sustainable-info-section { padding: 40px 15px; }
+            .sustainable-info-section h2 { font-size: 1.8rem; margin-bottom: 12px; }
+            .sustainable-info-section p { font-size: 0.95rem; }
+            
+            .section-title { padding: 40px 15px 15px; }
+            .section-title h2 { font-size: 1.8rem; margin-bottom: 12px; }
+            .section-title p { font-size: 0.95rem; }
         }
     </style>
 </head>
