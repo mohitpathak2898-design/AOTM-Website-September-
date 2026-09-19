@@ -351,6 +351,10 @@ footer {
     box-sizing: border-box;
 }
 
+#wind-section {
+    background-color: #f4f6f8;
+}
+
 .solar-info-flex {
     display: flex;
     align-items: center;
@@ -398,10 +402,9 @@ footer {
 }
 
 
-
 .electricity-steps-box {
-    background-color: #b9e9c4; 
-    border: 1px solid #74c69d; 
+    background-color: #ffffff; 
+    border: 1px solid #e5ebe6; 
     max-width: 900px;
     margin: 0 auto 5rem auto;
     text-align: left;
@@ -420,7 +423,7 @@ footer {
 }
 
 .electricity-steps-box ol li {
-    color: #1b4332; 
+    color: #444; 
     font-weight: 500;
 }
 
@@ -429,10 +432,9 @@ footer {
 }
 
 .solar-benefit-card {
-    background-color: #b9e9c4; 
-    border: 1px solid #74c69d; 
+    background-color: #ffffff; 
+    border: 1px solid #e5ebe6; 
 }
-
 
 
 .advancing-wrapper {
@@ -501,24 +503,35 @@ footer {
     .hero-content h1 { font-size: 2.2rem; }
     .hero-content p { font-size: 1.05rem; margin-bottom: 25px; }
     
-    .sustainable-info-section h2 { font-size: 1.8rem; margin-bottom: 12px; }
-    .sustainable-info-section p { font-size: 1rem; }
+    .sustainable-info-section h2 { font-size: 1.6rem; margin-bottom: 12px; }
+    .sustainable-info-section p { font-size: 0.95rem; }
     
     .section-title { padding: 45px 20px 15px; }
-    .section-title h2 { font-size: 1.8rem; margin-bottom: 12px; }
-    .section-title p { font-size: 1rem; }
+    .section-title h2 { font-size: 1.6rem; margin-bottom: 12px; }
+    .section-title p { font-size: 0.95rem; }
+
+    .energy-topics-section { padding: 45px 20px 55px; }
+    .energy-topics-header h2 { font-size: 1.6rem; margin-bottom: 12px; }
+    .energy-topics-header p { font-size: 0.95rem; }
+    
+    .energy-topic-content h3 { font-size: 1.25rem; }
+    .energy-topic-content p { font-size: 0.9rem; }
 
     .container { 
         grid-template-columns: 1fr; 
         padding: 25px 5% 50px 5%;
     }
-
-    .energy-topics-section { padding: 45px 20px 55px; }
-    .energy-topics-header h2 { font-size: 1.8rem; }
-    .energy-topics-container { grid-template-columns: 1fr; }
+    
+    .card h3 { font-size: 1.15rem; }
+    .card p { font-size: 0.95rem; }
     
     .combined-solar-section { padding: 3rem 0 0 0; }
     .solar-info-flex { flex-direction: column; text-align: center; }
     .solar-info-flex div { text-align: center; }
+    
+    .solar-info-text h2 { font-size: 1.8rem; }
+    .solar-info-text p { font-size: 0.95rem; }
+
     .electricity-steps-box { margin: 0 5% 3rem 5%; padding: 1.5rem; }
+    .electricity-steps-list { font-size: 0.95rem; }
 }
