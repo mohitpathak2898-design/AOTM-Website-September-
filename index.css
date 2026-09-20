@@ -495,8 +495,8 @@ footer {
         justify-content: center; 
         padding-left: 0; 
         text-align: center; 
-        height: 85vh; 
-        min-height: 620px; 
+        height: 70vh; 
+        min-height: 600px; 
     }
     
     .hero-content { align-items: center; padding: 0 20px; }
@@ -513,6 +513,10 @@ footer {
     .energy-topics-section { padding: 45px 20px 55px; }
     .energy-topics-header h2 { font-size: 1.6rem; margin-bottom: 12px; }
     .energy-topics-header p { font-size: 0.95rem; }
+    
+    .energy-topics-container {
+        grid-template-columns: 1fr;
+    }
     
     .energy-topic-content h3 { font-size: 1.25rem; }
     .energy-topic-content p { font-size: 0.9rem; }
