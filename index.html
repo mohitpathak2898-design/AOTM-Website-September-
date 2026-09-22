@@ -4,156 +4,472 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Horizon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="index.css">
-
     <style>
-        html {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; 
         }
 
-        .main-footer {
-            background-color: #1b4332; 
-            color: #f4f9f4;
-            padding: 60px 5% 20px 5%;
-            margin-top: 40px;
+        body {
+            background-color: #f4f9f4;
+            color: #333333;
+            line-height: 1.6;
         }
 
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
             max-width: 1400px;
-            margin: 0 auto 40px auto;
+            width: 95%;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .footer-section h3 {
-            color: #52b788; 
-            font-size: 1.5rem;
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #222;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #2e7d32;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #2e7d32;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(27, 94, 32, 0.65), rgba(0, 25, 10, 0.8)), url('Images/p3.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: #fff;
+        }
+
+        .hero-badge {
+            background-color: rgba(46, 125, 50, 0.6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
             margin-bottom: 20px;
         }
 
-        .footer-section p {
-            color: #d8e2dc;
-            line-height: 1.6;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
         }
 
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links ul li a {
-            color: #d8e2dc;
+        .btn {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
             text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .footer-links ul li a:hover {
-            color: #52b788;
+        .btn:hover {
+            background-color: #1b5e20;
         }
 
-        .social-icons {
-            display: flex;
-            flex-direction: row; 
-            gap: 15px;
-            margin-top: 25px;
-            align-items: center; 
-            justify-content: center; 
-            padding: 0;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
         }
 
-        .social-icons a {
-            color: #d8e2dc;
-            text-decoration: none;
-            display: inline-flex; 
-            align-items: center;
-            justify-content: center;
-            width: 42px; 
-            height: 42px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-            margin: 0; 
-        }
-
-        .social-icons a:hover {
-            background-color: #52b788;
-            color: #1b4332;
-            transform: translateY(-3px);
-        }
-
-        .social-icons a svg {
-            width: 20px;
-            height: 20px;
-            display: block;
-            margin: auto; 
-        }
-
-        .social-icons a svg:not(.fill-icon) {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .fill-icon {
-            fill: currentColor;
-            stroke: none;
-        }
-
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
+        .section-header {
             text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
         }
 
-        .footer-bottom p {
-            color: #d8e2dc;
-            font-size: 0.9rem;
-            margin: 0;
+        .section-badge {
+            color: #2e7d32;
+            background-color: #e8f5e9;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
-        .made-by {
-            margin-left: 20px;
-            color: #52b788;
+        .section-header h2 {
+            font-size: 35px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .card p, .card ul {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+        }
+
+        .card ul li i {
+            color: #2e7d32;
+            margin-right: 8px;
+        }
+
+        .feature-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+
+        .feature-image img {
+            width: 100%; 
+            max-width: 550px; 
+            margin: 0 auto; 
+            display: block;
+            aspect-ratio: 4 / 3; 
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-text h3 {
+            font-size: 28px;
+            color: #1a4314;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .feature-text p {
+            color: #555;
+            font-size: 15.5px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        #wind {
+            margin-bottom: 100px;
+        }
+
+        #wind .section-badge {
+            color: #0284c7; 
+            background-color: #e0f2fe;
+        }
+
+        .wind-card {
+            padding: 40px;
+        }
+
+        .wind-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .wind-desc {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .wind-stats-grid {
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 12px;
+            color: #777;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            font-size: 26px;
+            font-weight: 700;
+            color: #222;
+            margin-top: 5px;
+        }
+
+        .stat-desc {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        
+        .blog-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .blog-tag {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2e7d32;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .blog-content h3 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .read-more {
+            color: #2e7d32;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #1b5e20; 
+            color: #fff;
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #e8f5e9; 
+        }
+
+        .footer-col p, .footer-col ul li a {
+            color: #c8e6c9; 
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #2e7d32; 
+            background-color: #144d18; 
+            color: #fff;
+            width: 100%;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #a5d6a7; 
+        }
+
+        .newsletter-form button {
+            background-color: #2e7d32; 
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
-            .main-footer {
-                padding: 40px 5% 20px 5%;
+        .newsletter-form button:hover {
+            background-color: #388e3c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #2e7d32; 
+            padding-top: 20px;
+            font-size: 13px;
+            color: #a5d6a7; 
+        }
+
+        @media (max-width: 900px) {
+            .nav-container {
+                padding: 15px 20px;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .feature-split {
+                grid-template-columns: 1fr;
             }
             .footer-container {
                 grid-template-columns: 1fr;
-                text-align: center; 
-                gap: 30px;
             }
-            .social-icons {
-                justify-content: center; 
+            .hero h1 {
+                font-size: 32px;
             }
-            .footer-bottom {
+            .nav-links {
+                display: none;
                 flex-direction: column;
-                gap: 12px;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 20px;
+                text-align: center;
             }
-            .made-by {
-                margin-left: 0;
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
                 display: block;
             }
         }
@@ -162,309 +478,274 @@
 <body>
 
     <header>
-        <a href="#" class="logo">
-            <div class="logo-text">
-                <span>GREEN</span>
-                <span class="energy">HORIZON</span>
-            </div>
-        </a>
-
-        <nav>
-            <ul id="nav-links">
+        <div class="nav-container">
+            <a href="#" class="logo">Green <span>Horizon</span></a>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#solar-section">Solar Energy</a></li>
-                <li><a href="#wind-section">Wind Power</a></li>
-                <li><a href="#">Green Lifestyle</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#sustainable">Sustainable Energy</a></li>
+                <li><a href="#solar">Solar Energy</a></li>
+                <li><a href="#wind">Wind Energy</a></li>
+                <li><a href="#lifestyle">Green Lifestyle</a></li>
             </ul>
-        </nav>
-
-        <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </header>
-    
-    <div class="hero-section">
+
+    <section class="hero">
         <div class="hero-content">
-            <span class="hero-tag">SUSTAINABLE ENERGY</span>
-            <h1>Powering a <br><span>Renewable World</span></h1>
-            <p>
-                Building a resilient planet with efficient, zero-emission solar and wind power. Reducing carbon, securing our future.
-            </p>
-        
-            <a href="#explore-energy" class="hero-btn">Explore More <span>&darr;</span></a>
-        </div>
-    </div>
-
-    <div class="sustainable-info-section">
-        <h2>What is Sustainable Energy?</h2>
-        <p>
-            Sustainable energy is power that can be replenished naturally without exhausting natural resources or causing severe environmental damage. It encompasses renewable sources like sunlight, wind, rain, and geothermal heat. By making the switch to these green technologies, we can drastically reduce our carbon footprint, combat global climate change, and ensure a cleaner, healthier planet for generations to come. It’s not just about producing energy; it’s about doing so responsibly.
-        </p>
-    </div>
-
-    
-    <section class="energy-topics-section" id="explore-energy">
-        <div class="energy-topics-header">
-            <h2>Explore Sustainable Energy</h2>
-            <p>
-                Discover the technologies and everyday practices shaping a cleaner, more resilient future.
-                From renewable power generation to greener lifestyles, each solution can help reduce emissions
-                and use natural resources more responsibly.
-            </p>
-        </div>
-
-        <div class="energy-topics-container">
-
-            <article class="energy-topic-card">
-                <img class="energy-topic-image"
-                     src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=85"
-                     alt="Solar panels generating renewable energy"
-                     loading="lazy">
-                <div class="energy-topic-content">
-                    <span class="energy-topic-label">Renewable Power</span>
-                    <h3>Solar Energy</h3>
-                    <p>
-                        Solar panels convert sunlight into electricity without burning fossil fuels.
-                        Solar power can be used for homes, businesses and large-scale power plants,
-                        helping lower operational emissions and dependence on conventional energy.
-                    </p>
-                </div>
-            </article>
-
-            <article class="energy-topic-card">
-                <img class="energy-topic-image"
-                     src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=85"
-                     alt="Wind turbines producing clean energy"
-                     loading="lazy">
-                <div class="energy-topic-content">
-                    <span class="energy-topic-label">Clean Electricity</span>
-                    <h3>Wind Power</h3>
-                    <p>
-                        Wind turbines use the movement of air to generate electricity. Modern wind farms
-                        can produce large amounts of low-carbon power and work alongside solar generation
-                        to create a more diverse renewable energy mix.
-                    </p>
-                </div>
-            </article>
-
-            <article class="energy-topic-card">
-                <img class="energy-topic-image"
-                     src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=85"
-                     alt="Green lifestyle with plants and sustainable living"
-                     loading="lazy">
-                <div class="energy-topic-content">
-                    <span class="energy-topic-label">Everyday Action</span>
-                    <h3>Green Lifestyle</h3>
-                    <p>
-                        Sustainable living starts with practical choices such as saving electricity,
-                        reducing waste, reusing materials, choosing efficient appliances and using
-                        public transport, cycling or walking when possible.
-                    </p>
-                </div>
-            </article>
-
+            <span class="hero-badge">Powering Tomorrow, Today</span>
+            <h1>Embrace Sustainable Energy for a Greener Planet</h1>
+            <p>Discover how solar panels, wind turbines, and eco-friendly daily habits can transform our energy landscape and secure our future.</p>
+            <a href="#sustainable" class="btn">Explore the Content <i class="fa-solid fa-arrow-down" style="margin-left: 5px;"></i></a>
         </div>
     </section>
 
-    
-    <section id="solar-section" class="combined-solar-section">
-        
-        <div class="solar-info-flex">
+    <main class="container">
+
+        <section id="sustainable" style="margin-bottom: 100px;">
             
-            <div class="solar-info-text">
-                <h2>What is Solar Energy?</h2>
-                <p>
-                    Solar energy is the radiant light and heat from the Sun that is harnessed using various technologies such as photovoltaic panels and solar thermal collectors. It is a completely renewable and abundant resource. By capturing the sun's energy, we can generate clean electricity for our homes and businesses, reducing our reliance on harmful fossil fuels and moving towards a truly sustainable future.
-                </p>
+            <div class="section-header">
+                <span class="section-badge">Overview</span>
+                <h2>Sustainable Energy</h2>
             </div>
             
-            <div class="solar-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=1920&auto=format&fit=crop" 
-                     alt="4K Solar Energy" class="solar-img">
+            <div class="feature-split">
+                <div class="feature-image">
+                    <img src="Images/p5.png" alt="HD Sustainable Energy Landscape">
+                </div>
+                <div class="feature-text">
+                    <h3>The Technological Revolution in Deep Sustainability</h3>
+                    <p>The transition to sustainable energy is no longer just an environmental imperative; it is a profound technological and economic revolution. As we move away from finite fossil fuels, innovations in <strong>Grid-Scale Battery Storage</strong> and <strong>Green Hydrogen</strong> are permanently solving the historical intermittency issues of solar and wind generation.</p>
+                    <p>Modern sustainability utilizes advanced AI-driven <em>Smart Grids</em> that predict energy demand spikes, dynamically routing electricity to where it is needed in real-time. This decentralization allows communities to generate, store, and trade their own power through local microgrids, fundamentally democratizing global energy access.</p>
+                </div>
             </div>
 
-        </div>
-        
-        <div class="section-title generated-electricity-title">
-            <h2>How is Electricity Generated?</h2>
-            <p>Understanding the simple science behind converting sunlight into usable power for your home.</p>
-        </div>
-        
-        <div class="sustainable-info-section electricity-steps-box">
-            <ol class="electricity-steps-list">
-                <li><strong>Sunlight Absorption:</strong> Solar panels are made of photovoltaic (PV) cells. During the day, these cells absorb sunlight.</li>
-                <li><strong>Electron Movement:</strong> The absorbed solar energy excites electrons inside the PV cells, causing them to flow and create Direct Current (DC) electricity.</li>
-                <li><strong>Inverter Conversion:</strong> Because homes use Alternating Current (AC), the DC electricity is sent to a solar inverter, which converts it into usable AC electricity.</li>
-                <li><strong>Powering Up:</strong> The AC electricity flows to your home's electrical panel (breaker box) to power your appliances, lights, and devices.</li>
-                <li><strong>Grid or Battery:</strong> Any excess electricity produced is either stored in a solar battery for nighttime use or sent back to the main power grid.</li>
-            </ol>
-        </div>
-        
-        <div class="section-title">
-            <h2>Key Benefits of Solar Energy</h2>
-            <p>Switching to solar power offers incredible advantages for both the environment and your finances.</p>
-        </div>
-
-        <div class="container">
-            <div class="card solar-benefit-card">
-                <h3>100% Clean & Renewable</h3>
-                <p>Solar power produces no greenhouse gas emissions or air pollutants, making it one of the cleanest energy sources available to combat climate change.</p>
+            <div class="section-header">
+                <span class="section-badge">Core Foundation</span>
+                <h2>Understanding Sustainable Energy</h2>
+                <p>Energy that meets the needs of the present without compromising the ability of future generations to meet their own needs.</p>
             </div>
 
-            <div class="card solar-benefit-card">
-                <h3>Lower Electricity Bills</h3>
-                <p>By generating your own electricity from the sun, you can drastically reduce or even eliminate your monthly utility bills and protect yourself from rising energy costs.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>What is Sustainable Energy?</h3>
+                    <p>Sustainable energy is clean energy that is inexhaustible and causes minimal environmental degradation. Unlike fossil fuels, it relies on natural processes like sunlight, wind, and water flow that continuously replenish themselves.</p>
+                </div>
+                <div class="card">
+                    <h3>Core Benefits</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Drastic reduction in carbon emissions</li>
+                        <li><i class="fa-solid fa-check"></i> Infinite availability compared to coal/oil</li>
+                        <li><i class="fa-solid fa-check"></i> Long-term economic stability</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Global Transition</h3>
+                    <p>Governments and enterprises worldwide are modernizing grids with smart infrastructure, transitioning transport to electric vehicles, and phasing out high-emission coal plants to fulfill climate agreements.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="card solar-benefit-card">
-                <h3>Low Maintenance</h3>
-                <p>Solar energy systems have no moving parts, which means there is very little wear and tear. They require minimal maintenance and can last for decades.</p>
-            </div>
-
-            <div class="card solar-benefit-card">
-                <h3>Energy Independence</h3>
-                <p>Generating your own power means you are less reliant on the traditional energy grid, giving you greater security against power outages and fossil fuel shortages.</p>
-            </div>
-        </div>
-
-    </section>
-
-    
-    <section id="wind-section" class="combined-solar-section">
-        
-        <div class="solar-info-flex">
-            <div class="solar-info-text">
-                <h2>The Fundamentals of Wind Energy</h2>
-                <p>
-                    Wind power is the process of generating electricity from the natural movement of the air. It is a clean, renewable energy source that produces no greenhouse gas emissions during operation. By capturing the kinetic energy of wind through large turbines, we can supply massive amounts of sustainable power to grids across the globe, reducing our reliance on fossil fuels.
-                </p>
-            </div>
+        <section id="solar" style="margin-bottom: 100px;">
             
-            <div class="solar-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1920&auto=format&fit=crop" 
-                     alt="Wind Turbines" class="solar-img">
-            </div>
-        </div>
-
-        <div class="section-title generated-electricity-title">
-            <h2>The Mechanics of Wind Generation</h2>
-            <p>A step-by-step look at converting natural kinetic energy into usable electrical power.</p>
-        </div>
-        
-        <div class="sustainable-info-section electricity-steps-box">
-            <ol class="electricity-steps-list">
-                <li><strong>Wind turns the blades:</strong> The wind blows past the turbine blades, creating lift and making them rotate.</li>
-                <li><strong>Spinning the rotor:</strong> The rotating blades turn a rotor hub that is connected to a low-speed shaft inside the nacelle.</li>
-                <li><strong>Gearbox and Generator:</strong> A gearbox increases the rotational speed and spins a generator, which converts the mechanical energy into electricity.</li>
-                <li><strong>Transformer steps up voltage:</strong> The electricity travels down the tower to a transformer that increases the voltage for efficient long-distance transmission.</li>
-                <li><strong>Grid Distribution:</strong> The high-voltage electricity is sent to the main power grid, where it is distributed to homes and businesses.</li>
-            </ol>
-        </div>
-
-        <div class="section-title">
-            <h2>Strategic Advantages of Wind Power</h2>
-            <p>Exploring the significant economic and environmental value delivered by wind energy systems.</p>
-        </div>
-
-        <div class="container">
-            <div class="card solar-benefit-card">
-                <h3>Cost-Effective</h3>
-                <p>Wind energy is one of the lowest-cost energy sources available today. Once turbines are built, the wind itself is completely free.</p>
+            <div class="section-header">
+                <span class="section-badge" style="color: #b78103; background-color: #fef3c7;">Overview</span>
+                <h2>Solar Energy</h2>
             </div>
 
-            <div class="card solar-benefit-card">
-                <h3>Creates Jobs</h3>
-                <p>The wind energy sector is a major job creator, offering employment in manufacturing, installation, maintenance, and supporting services.</p>
+            <div class="feature-split">
+                <div class="feature-image">
+                    <img src="Images/p6.png" alt="HD Solar Panels Array">
+                </div>
+                <div class="feature-text">
+                    <h3>Revolutionizing Grid Power with Photovoltaics</h3>
+                    <p>Solar energy represents the most abundant energy resource on Earth. With recent advancements in <strong>high-efficiency bifacial panels</strong> and next-generation materials like perovskite, we are capturing more of the sun's spectrum than ever before, drastically driving down the cost per kilowatt-hour.</p>
+                    <p>From massive utility-scale solar farms in open plains to decentralized rooftop arrays in dense urban centers, solar technology is completely reshaping our energy independence. When paired with smart battery storage, it provides reliable, 24/7 clean power to communities globally.</p>
+                </div>
             </div>
 
-            <div class="card solar-benefit-card">
-                <h3>Clean Energy</h3>
-                <p>Wind turbines don't pollute the air or require water for cooling, making them incredibly environmentally friendly and sustainable.</p>
+            <div class="section-header" style="margin-top: 30px;">
+                <span class="section-badge" style="color: #b78103; background-color: #fef3c7;">Solar Mechanics</span>
+                <h2>How Solar Technology Works</h2>
+                <p>Solar arrays convert abundant sunlight into usable electrical energy using advanced PV modules and modern architecture.</p>
             </div>
 
-            <div class="card solar-benefit-card">
-                <h3>Efficient Land Use</h3>
-                <p>Wind farms can be built on existing farms or ranches. The turbines have a small footprint, allowing land to still be used for agriculture.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>How Solar Power is Made</h3>
+                    <p>Photovoltaic (PV) cells constructed from layers of semiconductor silicon absorb sunlight particles (photons). This process excites electrons, generating a direct current (DC) electrical charge. An advanced inverter then transforms this DC electricity into usable alternating current (AC) power for residential and commercial grids.</p>
+                </div>
+                <div class="card">
+                    <h3>Key Benefits</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Drastically slashes monthly utility electricity bills</li>
+                        <li><i class="fa-solid fa-check"></i> Zero greenhouse gas emissions during operation</li>
+                        <li><i class="fa-solid fa-check"></i> Low operational maintenance with 25+ years lifespan</li>
+                        <li><i class="fa-solid fa-check"></i> Increases property value significantly</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Global Climate Impact</h3>
+                    <p>By substituting fossil-fuel burning plants with solar arrays, a standard residential rooftop installation prevents approximately 3 to 4 tons of harmful carbon dioxide from contaminating Earth's atmosphere every single year, equivalent to planting over 150 mature trees annually.</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-    </section>
+        <section id="wind">
+            
+            <div class="section-header">
+                <span class="section-badge">Overview</span>
+                <h2>Wind Energy</h2>
+            </div>
 
-    
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-section" style="text-align: center;">
-                <h3>Green Horizon</h3>
-                <p>Leading the transition to a sustainable future by harnessing the power of nature. We provide cleaner, more efficient, and resilient energy solutions for everyone.</p>
+            <div class="feature-split">
+                <div class="feature-image">
+                    <img src="Images/p7.png" alt="HD Wind Turbines Landscape">
+                </div>
+                <div class="feature-text">
+                    <h3>Scaling Clean Energy with Atmospheric Currents</h3>
+                    <p>Wind energy has rapidly matured into one of the most cost-effective and scalable renewable energy sources available today. By utilizing gigantic offshore and onshore wind farms, we can harvest the relentless kinetic energy of atmospheric currents, drastically reducing our dependence on fossil fuels.</p>
+                    <p>Modern aerodynamic engineering and advanced composite materials have enabled taller turbines with massive blade sweeps, capturing high-altitude winds that blow with incredible consistency. This continuous innovation ensures that wind energy serves as a powerful, stabilizing pillar in the global transition to a zero-carbon grid.</p>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 30px;">
+                <span class="section-badge">Wind Mechanics</span>
+                <h2>Capturing Kinetic Wind Energy</h2>
+                <p>Wind turbines transform atmospheric air currents into clean, emission-free electric power on an industrial scale.</p>
+            </div>
+
+            <div class="card wind-card">
+                <h3>How Wind Turbines Generate Power</h3>
+                <p class="wind-desc">Wind flows across aerodynamic turbine blades, creating aerodynamic lift and forcing them to rotate around a central rotor hub. This rotational mechanical energy turns an internal drive shaft housed in the nacelle. The low-speed shaft connects to a gearbox that dramatically increases rotational velocity, driving a high-efficiency electromagnetic generator to produce commercial electrical energy.</p>
                 
-                <div class="social-icons">
-                    
-                    <a href="#" title="Instagram">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    
-                    <a href="#" title="Facebook">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
-                    </a>
-                    
-                    <a href="#" title="WhatsApp">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                        </svg>
-                    </a>
-                    
-                    <a href="#" title="X">
-                        <svg viewBox="0 0 24 24" class="fill-icon">
-                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
-                        </svg>
-                    </a>
+                <div class="grid-3 wind-stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">Global Capacity</span>
+                        <div class="stat-value">900+ GW</div>
+                        <p class="stat-desc">Installed global capacity expanding rapidly across onshore and offshore farms.</p>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Homes Powered</span>
+                        <div class="stat-value">300M+</div>
+                        <p class="stat-desc">Clean energy supplied reliably to millions of households worldwide.</p>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Efficiency Rate</span>
+                        <div class="stat-value">45% - 50%</div>
+                        <p class="stat-desc"></p>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <section id="lifestyle">
+            <div class="section-header">
+                <span class="section-badge">Sustainable Living</span>
+                <h2>Green Lifestyle & Eco Habits</h2>
+                <p>Sustainable living is an intentional daily lifestyle choice that strives to minimize an individual's carbon output and ecological footprint.</p>
+            </div>
+
+            <div class="grid-3">
+            
+                <div class="blog-card">
+                    <img src="Images/p8.png" alt="Recycling habit" class="blog-img">
+                    <div class="blog-content">
+                        <div>
+                            <span class="blog-tag">Recycling & Waste</span>
+                            <h3>Mastering Zero-Waste Household Habits</h3>
+                            <p>Learn practical protocols to eliminate single-use plastics, compost organic food trimmings into rich garden soil, and systematically sort recyclable materials to keep municipal landfills clear.</p>
+                        </div>
+                        <div class="blog-footer">
+                            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            <span class="read-more">Read Article &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+        
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Carbon footprint" class="blog-img">
+                    <div class="blog-content">
+                        <div>
+                            <span class="blog-tag">Carbon Footprint</span>
+                            <h3>Everyday Ways to Shrink Your Carbon Footprint</h3>
+                            <p>Small behavioral adjustments like transitioning to public transit, commuting via bicycle, optimizing residential water consumption, and purchasing local produce create massive cumulative environmental savings.</p>
+                        </div>
+                        <div class="blog-footer">
+                            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                            <span class="read-more">Read Article &rarr;</span>
+                        </div>
+                    </div>
+                </div>
 
             
-            <div class="footer-section footer-links">
-                <h3>Quick Links</h3>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" alt="Eco friendly home" class="blog-img">
+                    <div class="blog-content">
+                        <div>
+                            <span class="blog-tag">Energy Efficiency</span>
+                            <h3>Energy-Efficient Home Upgrades on a Budget</h3>
+                            <p>Discover how upgrading incandescent lighting to LEDs, installing programmable smart thermostats, and enhancing structural thermal insulation can slash home energy consumption immediately.</p>
+                        </div>
+                        <div class="blog-footer">
+                            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            <span class="read-more">Read Article &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4 style="color: #fff;">Green Horizon</h4>
+                <p>Empowering communities worldwide with knowledge on sustainable energy and eco-friendly living.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#solar-section">Solar Energy</a></li>
-                    <li><a href="#wind-section">Wind Power</a></li>
-                    <li><a href="#">Green Lifestyle</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#sustainable">Sustainable Energy</a></li>
+                    <li><a href="#solar">Solar Energy</a></li>
+                    <li><a href="#wind">Wind Energy</a></li>
+                    <li><a href="#lifestyle">Green Lifestyle</a></li>
                 </ul>
             </div>
-
-            
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><strong>Email:</strong> greenhorizon@gmail.com</p>
-                <p><strong>Phone:</strong> +91 12345 67890</p>
+            <div class="footer-col">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to our weekly green living tips.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Join</button>
+                </form>
             </div>
         </div>
-
-    
         <div class="footer-bottom">
-            <p>&copy; 2026 Green Horizon Technologies. All rights reserved.</p>
-            <p><span class="made-by">Made by Mohit Pathak</span></p>
+            &copy; 2026 Green Horizon. All rights reserved. Building a sustainable future.
         </div>
     </footer>
-    
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
 
-        hamburger.addEventListener('click', function() {
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
     </script>
 
