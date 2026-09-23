@@ -346,7 +346,7 @@
 
         .blog-footer {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; 
             font-size: 12px;
             color: #888;
             border-top: 1px solid #eee;
@@ -359,6 +359,7 @@
             cursor: pointer;
         }
 
+    
         footer {
             background-color: #1b5e20; 
             color: #fff;
@@ -451,14 +452,70 @@
             .footer-container {
                 grid-template-columns: 1fr;
             }
-            .hero h1 {
-                font-size: 32px;
+            
+            .hero {
+                height: auto;
+                min-height: 60vh;
+                padding-top: 100px;
+                padding-bottom: 50px;
             }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 26px;
+            }
+            .section-header p {
+                font-size: 14px;
+            }
+            .feature-text h3 {
+                font-size: 22px;
+            }
+            .feature-text p {
+                font-size: 14px;
+            }
+            .card h3 {
+                font-size: 18px;
+            }
+            .card p, .card ul {
+                font-size: 14px;
+            }
+            
+            .feature-image img {
+                aspect-ratio: 16 / 9;
+                border-radius: 8px;
+            }
+
+            .wind-card {
+                padding: 25px;
+            }
+            .wind-card h3 {
+                font-size: 20px;
+            }
+            .wind-desc {
+                font-size: 14px;
+            }
+            .stat-value {
+                font-size: 22px;
+            }
+
+            .blog-content h3 {
+                font-size: 18px;
+            }
+            .blog-content p {
+                font-size: 13px;
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 65px;
                 left: 0;
                 width: 100%;
                 background-color: #fff;
@@ -642,9 +699,26 @@
         </section>
 
         <section id="lifestyle">
+            
             <div class="section-header">
-                <span class="section-badge">Sustainable Living</span>
-                <h2>Green Lifestyle & Eco Habits</h2>
+                <span class="section-badge" style="color: #15803d; background-color: #dcfce7;">Overview</span>
+                <h2>Green Lifestyle</h2>
+            </div>
+
+            <div class="feature-split">
+                <div class="feature-image">
+                    <img src="Images/p9.png" alt="Zero Waste Eco Friendly Lifestyle">
+                </div>
+                <div class="feature-text">
+                    <h3>Transforming Daily Habits for the Earth</h3>
+                    <p>A true green lifestyle starts at home with the everyday choices we make. It involves shifting away from single-use plastics, choosing reusable shopping bags, and being mindful of our water and electricity consumption. Small actions like carrying a reusable water bottle or composting kitchen scraps can significantly reduce personal waste.</p>
+                    <p>Beyond just recycling, eco-friendly living is about mindful consumption. Buying local produce, eating more plant-based meals, and choosing ethically made products help lower your personal carbon footprint. Every small step contributes to a cleaner, healthier environment for future generations.</p>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 50px;">
+                <span class="section-badge">Green Lifestyle</span>
+                <h2>Eco Habits & Daily Practices</h2>
                 <p>Sustainable living is an intentional daily lifestyle choice that strives to minimize an individual's carbon output and ecological footprint.</p>
             </div>
 
@@ -659,7 +733,6 @@
                             <p>Learn practical protocols to eliminate single-use plastics, compost organic food trimmings into rich garden soil, and systematically sort recyclable materials to keep municipal landfills clear.</p>
                         </div>
                         <div class="blog-footer">
-                            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
                             <span class="read-more">Read Article &rarr;</span>
                         </div>
                     </div>
@@ -667,7 +740,7 @@
 
         
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Carbon footprint" class="blog-img">
+                    <img src="Images/p10.png" alt="Carbon footprint" class="blog-img">
                     <div class="blog-content">
                         <div>
                             <span class="blog-tag">Carbon Footprint</span>
@@ -675,7 +748,6 @@
                             <p>Small behavioral adjustments like transitioning to public transit, commuting via bicycle, optimizing residential water consumption, and purchasing local produce create massive cumulative environmental savings.</p>
                         </div>
                         <div class="blog-footer">
-                            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
                             <span class="read-more">Read Article &rarr;</span>
                         </div>
                     </div>
@@ -683,7 +755,7 @@
 
             
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" alt="Eco friendly home" class="blog-img">
+                    <img src="Images/p11.png" alt="Eco friendly home" class="blog-img">
                     <div class="blog-content">
                         <div>
                             <span class="blog-tag">Energy Efficiency</span>
@@ -691,7 +763,6 @@
                             <p>Discover how upgrading incandescent lighting to LEDs, installing programmable smart thermostats, and enhancing structural thermal insulation can slash home energy consumption immediately.</p>
                         </div>
                         <div class="blog-footer">
-                            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
                             <span class="read-more">Read Article &rarr;</span>
                         </div>
                     </div>
