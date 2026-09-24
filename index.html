@@ -33,10 +33,9 @@
         }
 
         .nav-container {
-            max-width: 1400px;
-            width: 95%;
-            margin: 0 auto;
-            padding: 15px 40px;
+            max-width: 100%; 
+            width: 100%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,6 +62,7 @@
             text-decoration: none;
             color: #555;
             font-weight: 500;
+            font-size: 15px; 
             transition: 0.3s;
         }
 
@@ -79,7 +79,7 @@
 
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(27, 94, 32, 0.65), rgba(0, 25, 10, 0.8)), url('Images/p3.png');
+            background: linear-gradient(rgba(46, 125, 50, 0.55), rgba(27, 94, 32, 0.75)), url('Images/p3.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -359,7 +359,50 @@
             cursor: pointer;
         }
 
-    
+        
+        #about {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        .about-badge {
+            color: #4338ca; 
+            background-color: #e0e7ff;
+        }
+
+        .about-container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+
+        .about-container:hover {
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+        }
+
+        .about-container h3 {
+            font-size: 26px; 
+            color: #1a4314; 
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            color: #555; 
+            font-size: 15.5px; 
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .about-container p:last-child {
+            margin-bottom: 0;
+        }
+
         footer {
             background-color: #1b5e20; 
             color: #fff;
@@ -370,8 +413,8 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 30px;
             margin-bottom: 40px;
         }
 
@@ -396,6 +439,11 @@
 
         .footer-col ul li a:hover {
             color: #fff;
+        }
+        
+        .footer-col .contact-info i {
+            margin-right: 8px;
+            color: #a5d6a7;
         }
 
         .newsletter-form {
@@ -443,19 +491,35 @@
             .nav-container {
                 padding: 15px 20px;
             }
+            .about-container {
+                padding: 30px 20px;
+            }
             .grid-3 {
                 grid-template-columns: 1fr;
             }
             .feature-split {
                 grid-template-columns: 1fr;
             }
+            
             .footer-container {
                 grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form input, .newsletter-form button {
+                width: 100%;
+                max-width: 300px;
             }
             
             .hero {
                 height: auto;
-                min-height: 60vh;
+                min-height: 75vh;
                 padding-top: 100px;
                 padding-bottom: 50px;
             }
@@ -529,6 +593,9 @@
             .menu-toggle {
                 display: block;
             }
+            .nav-links a {
+                font-size: 16px; 
+            }
         }
     </style>
 </head>
@@ -543,6 +610,7 @@
                 <li><a href="#solar">Solar Energy</a></li>
                 <li><a href="#wind">Wind Energy</a></li>
                 <li><a href="#lifestyle">Green Lifestyle</a></li>
+                <li><a href="#about">About Us</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fa-solid fa-bars"></i>
@@ -770,6 +838,22 @@
             </div>
         </section>
 
+    
+        <section id="about">
+            <div class="section-header">
+                <span class="section-badge about-badge">Our Story</span>
+                <h2>About Green Horizon</h2>
+                <p>Leading the global transition towards a sustainable, zero-emission future.</p>
+            </div>
+
+            <div class="about-container">
+                <h3>Who We Are & What We Do</h3>
+                <p>At <strong>Green Horizon</strong>, we believe that the future of our planet depends on the choices we make today. Founded with a vision to democratize clean energy, we are a global collective of environmentalists, engineers, and educators dedicated to fighting climate change.</p>
+                <p>We specialize in providing accessible knowledge, innovative technological solutions, and actionable strategies for adopting solar and wind energy. From guiding households in their zero-waste journey to consulting on large-scale renewable infrastructure, our mission is to empower every individual and community to live in harmony with the Earth. Join us in making sustainable living not just an option, but a standard.</p>
+            </div>
+        </section>
+    
+
     </main>
 
     
@@ -787,7 +871,13 @@
                     <li><a href="#solar">Solar Energy</a></li>
                     <li><a href="#wind">Wind Energy</a></li>
                     <li><a href="#lifestyle">Green Lifestyle</a></li>
+                    <li><a href="#about">About Us</a></li>
                 </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p class="contact-info"><i class="fa-solid fa-envelope"></i> hello@greenhorizon.com</p>
+                <p class="contact-info"><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</p>
             </div>
             <div class="footer-col">
                 <h4>Stay Connected</h4>
